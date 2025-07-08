@@ -46,12 +46,14 @@ Le projet est réalisé selon une architecture microservices pour garantir la fl
 
 ![image](https://github.com/user-attachments/assets/ae2ae335-304f-4cf6-89d7-29c1df62851f)
 
-# Diagramme de sequence du Formateur :
+# Diagramme de sequence d'Formateur :
 
 ![image](https://github.com/user-attachments/assets/6154b5f7-57ba-4b05-b316-ac5512f8b7f2)
 
 
-# Diagramme de sequence du Formateur :
+# Diagramme de sequence d'Apprenant :
+
+![image](https://github.com/user-attachments/assets/a3008a87-9bcf-45a7-8b12-5bbcfa01d451)
 
 ## Lancement du projet avec Docker
 
