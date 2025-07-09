@@ -6,18 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Api-Gateway" />
-      </profile>
-      <profile name="Annotation profile for enaa-skills-parent" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-        </processorPath>
         <module name="Apprenant-Service" />
+        <module name="Api-Gateway" />
         <module name="Brief-Service" />
+        <module name="Validation-Service" />
       </profile>
       <profile name="Annotation profile for skillsvalidator" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
