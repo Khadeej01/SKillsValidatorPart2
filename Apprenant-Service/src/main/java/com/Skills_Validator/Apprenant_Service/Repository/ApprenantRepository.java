@@ -18,4 +18,4 @@ import java.util.Optional;
         @Query("SELECT a FROM Apprenant a WHERE a.nom LIKE %:nom% OR a.prenom LIKE %:nom%")
         List<Apprenant> findByNomOrPrenomContaining(@Param("nom") String nom);
     }
-}
+
