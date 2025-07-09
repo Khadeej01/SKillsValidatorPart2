@@ -34,7 +34,7 @@ public class ApprenantService {
                 .collect(Collectors.toList());
     }
 
-    public ApprenantDTO updateApprenant(Long id, ApprenantDTGO dto) {
+    public ApprenantDTO updateApprenant(Long id, ApprenantDTO dto) {
         Optional<Apprenant> optional = apprenantRepository.findById(id);
         if (optional.isPresent()) {
             Apprenant apprenant = optional.get();
