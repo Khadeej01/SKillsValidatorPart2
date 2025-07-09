@@ -42,7 +42,7 @@ public class ApprenantService {
             apprenant.setNom(dto.getNom());
             apprenant.setPrenom(dto.getPrenom());
             apprenant.setEmail(dto.getEmail());
-            apprenant.setMotDePasse(dto.getMotDePasse());
+            apprenant.setMotPasse(dto.getMotDePasse());
             return ApprenantMapper.toDto(apprenantRepository.save(apprenant));
         }
         return null;

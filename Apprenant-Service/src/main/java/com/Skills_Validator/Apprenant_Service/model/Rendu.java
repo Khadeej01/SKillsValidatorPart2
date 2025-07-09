@@ -1,67 +1,80 @@
 package com.Skills_Validator.Apprenant_Service.model;
 
-
 import jakarta.persistence.*;
-
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
-    @Table(name = "rendus")
-    public class Rendu {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+@Table(name = "rendus")
+public class Rendu {
 
-        @Column(name = "brief_id", nullable = false)
-        private Long briefId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-        @ManyToOne(fetch = FetchType.LAZY)
-        @JoinColumn(name = "apprenant_id", nullable = false)
-        private Apprenant apprenant;
+    private String message;
 
-        @Column(columnDefinition = "TEXT")
-        private String contenu;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date datedepot;
 
-        @Column(name = "url_fichier")
-        private String urlFichier;
+    private String statutRendu;
 
-        @Column(name = "date_soumission")
-        private LocalDateTime dateSoumission;
+    private String lien;
 
-        @Enumerated(EnumType.STRING)
-        private StatutRendu statut;
+    // Relation ManyToOne avec Apprenant (un rendu appartient à un apprenant)
+    @ManyToOne
+    @JoinColumn(name = "apprenant_id")
+    private Apprenant apprenant;
 
-        public Rendu() {}
-
-        public Rendu(Long briefId, Apprenant apprenant, String contenu, String urlFichier) {
-            this.briefId = briefId;
-            this.apprenant = apprenant;
-            this.contenu = contenu;
-            this.urlFichier = urlFichier;
-            this.dateSoumission = LocalDateTime.now();
-            this.statut = StatutRendu.EN_ATTENTE;
-        }
-
-        // Getters et Setters
-        public Long getId() { return id; }
-        public void setId(Long id) { this.id = id; }
-
-        public Long getBriefId() { return briefId; }
-        public void setBriefId(Long briefId) { this.briefId = briefId; }
-
-        public Apprenant getApprenant() { return apprenant; }
-        public void setApprenant(Apprenant apprenant) { this.apprenant = apprenant; }
-
-        public String getContenu() { return contenu; }
-        public void setContenu(String contenu) { this.contenu = contenu; }
-
-        public String getUrlFichier() { return urlFichier; }
-        public void setUrlFichier(String urlFichier) { this.urlFichier = urlFichier; }
-
-        public LocalDateTime getDateSoumission() { return dateSoumission; }
-        public void setDateSoumission(LocalDateTime dateSoumission) { this.dateSoumission = dateSoumission; }
-
-        public StatutRendu getStatut() { return statut; }
-        public void setStatut(StatutRendu statut) { this.statut = statut; }
+    public Rendu() {
     }
 
+    // Getters et setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Date getDatedepot() {
+        return datedepot;
+    }
+
+    public void setDatedepot(Date datedepot) {
+        this.datedepot = datedepot;
+    }
+
+    public String getStatutRendu() {
+        return statutRendu;
+    }
+
+    public void setStatutRendu(String statutRendu) {
+        this.statutRendu = statutRendu;
+    }
+
+    public String getLien() {
+        return lien;
+    }
+
+    public void setLien(String lien) {
+        this.lien = lien;
+    }
+
+    public Apprenant getApprenant() {
+        return apprenant;
+    }
+
+    public void setApprenant(Apprenant apprenant) {
+        this.apprenant = apprenant;
+    }
+}

@@ -1,25 +1,21 @@
 package com.Skills_Validator.Apprenant_Service.dto;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class RenduDto {
 
-        private Long id;
-        private Long briefId;
-        private Long apprenantId;
-        private String contenu;
-        private String urlFichier;
-        private LocalDateTime dateSoumission;
-        private String statut;
+    private Long id;
+    private String message;
+    private Date datedepot;
+    private String statutRendu;
+    private String lien;
 
-        public RenduDto() {}
+    private Long apprenantId;  // Pour lier au DTO Apprenant via son ID
 
-        public RenduDto(Long briefId, Long apprenantId, String contenu, String urlFichier) {
-            this.briefId = briefId;
-            this.apprenantId = apprenantId;
-            this.contenu = contenu;
-            this.urlFichier = urlFichier;
-        }
+    public RenduDto() {
+    }
+
+    // Getters et setters
 
     public Long getId() {
         return id;
@@ -29,12 +25,36 @@ public class RenduDto {
         this.id = id;
     }
 
-    public Long getBriefId() {
-        return briefId;
+    public String getMessage() {
+        return message;
     }
 
-    public void setBriefId(Long briefId) {
-        this.briefId = briefId;
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Date getDatedepot() {
+        return datedepot;
+    }
+
+    public void setDatedepot(Date datedepot) {
+        this.datedepot = datedepot;
+    }
+
+    public String getStatutRendu() {
+        return statutRendu;
+    }
+
+    public void setStatutRendu(String statutRendu) {
+        this.statutRendu = statutRendu;
+    }
+
+    public String getLien() {
+        return lien;
+    }
+
+    public void setLien(String lien) {
+        this.lien = lien;
     }
 
     public Long getApprenantId() {
@@ -43,37 +63,5 @@ public class RenduDto {
 
     public void setApprenantId(Long apprenantId) {
         this.apprenantId = apprenantId;
-    }
-
-    public String getContenu() {
-        return contenu;
-    }
-
-    public void setContenu(String contenu) {
-        this.contenu = contenu;
-    }
-
-    public String getUrlFichier() {
-        return urlFichier;
-    }
-
-    public void setUrlFichier(String urlFichier) {
-        this.urlFichier = urlFichier;
-    }
-
-    public LocalDateTime getDateSoumission() {
-        return dateSoumission;
-    }
-
-    public void setDateSoumission(LocalDateTime dateSoumission) {
-        this.dateSoumission = dateSoumission;
-    }
-
-    public String getStatut() {
-        return statut;
-    }
-
-    public void setStatut(String statut) {
-        this.statut = statut;
     }
 }
