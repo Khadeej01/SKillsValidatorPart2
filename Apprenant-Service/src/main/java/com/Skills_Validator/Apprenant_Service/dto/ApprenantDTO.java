@@ -36,6 +36,9 @@ public class ApprenantDTO {
             this.motDePasse = motDePasse;
         }
 
+        public ApprenantDTO(String nom, String prenom, String email, String motDePasse) {
+        }
+
         // Getters et Setters
         public Long getId() { return id; }
         public void setId(Long id) { this.id = id; }
