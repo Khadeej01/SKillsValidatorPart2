@@ -1,19 +1,15 @@
 package com.Skills_Validator.Validation._Service.model;
 
-
-
 import jakarta.persistence.*;
+
 
 import java.time.LocalDateTime;
 
 @Entity
 public class Validation {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
 
     private Long apprenantId;
     private Long briefId;
@@ -25,6 +21,70 @@ public class Validation {
     @Enumerated(EnumType.STRING)
     private StatutValidation statut;
 
-    // Getters et setters
-    // Constructeurs (par défaut et avec paramètres)
+    public Validation() {}
+
+    public Validation(Long apprenantId, Long briefId, Long competenceId, Long validateurId, LocalDateTime dateValidation, StatutValidation statut) {
+        this.apprenantId = apprenantId;
+        this.briefId = briefId;
+        this.competenceId = competenceId;
+        this.validateurId = validateurId;
+        this.dateValidation = dateValidation;
+        this.statut = statut;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getApprenantId() {
+        return apprenantId;
+    }
+
+    public void setApprenantId(Long apprenantId) {
+        this.apprenantId = apprenantId;
+    }
+
+    public Long getBriefId() {
+        return briefId;
+    }
+
+    public void setBriefId(Long briefId) {
+        this.briefId = briefId;
+    }
+
+    public Long getCompetenceId() {
+        return competenceId;
+    }
+
+    public void setCompetenceId(Long competenceId) {
+        this.competenceId = competenceId;
+    }
+
+    public Long getValidateurId() {
+        return validateurId;
+    }
+
+    public void setValidateurId(Long validateurId) {
+        this.validateurId = validateurId;
+    }
+
+    public LocalDateTime getDateValidation() {
+        return dateValidation;
+    }
+
+    public void setDateValidation(LocalDateTime dateValidation) {
+        this.dateValidation = dateValidation;
+    }
+
+    public StatutValidation getStatut() {
+        return statut;
+    }
+
+    public void setStatut(StatutValidation statut) {
+        this.statut = statut;
+    }
 }
