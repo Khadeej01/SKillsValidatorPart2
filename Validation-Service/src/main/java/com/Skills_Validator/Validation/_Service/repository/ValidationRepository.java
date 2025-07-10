@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ValidationRepository extends JpaRepository<Validation, Long> {
     // Ajoute ici des méthodes de requête personnalisées si besoin
+
+    //ghezeghdzghdz
 } 
