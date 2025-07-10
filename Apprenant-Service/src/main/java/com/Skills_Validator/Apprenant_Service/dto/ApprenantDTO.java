@@ -16,24 +16,21 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ApprenantDTO {
+    private Long id;
 
-        private Long id;
+    @NotBlank(message = "Le nom est obligatoire")
+    private String nom;
 
-        @NotBlank(message = "Le nom est obligatoire")
-        private String nom;
+    @NotBlank(message = "Le prénom est obligatoire")
+    private String prenom;
 
-        @NotBlank(message = "Le prénom est obligatoire")
-        private String prenom;
+    @Email(message = "Email invalide")
+    @NotBlank(message = "L'email est obligatoire")
+    private String email;
 
-        @Email(message = "Email invalide")
-        @NotBlank(message = "L'email est obligatoire")
-        private String email;
+    @Size(min = 6, message = "Le mot de passe doit contenir au moins 6 caractères")
+    private String motDePasse;
 
-        @Size(min = 6, message = "Le mot de passe doit contenir au moins 6 caractères")
-        private String motDePasse;
-
-        private LocalDateTime dateInscription;
-
-        private List<RenduDto> rendus;
-
+    private LocalDateTime dateInscription;
+    private List<RenduDto> rendus;
 }

@@ -6,20 +6,19 @@ import com.Skills_Validator.Apprenant_Service.model.Apprenant;
 import com.Skills_Validator.Apprenant_Service.model.Rendu;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
 public class ApprenantMapper {
-
     public static Apprenant toEntity(ApprenantDTO dto) {
         Apprenant apprenant = new Apprenant();
-        apprenant.setId(dto.getId());
         apprenant.setNom(dto.getNom());
         apprenant.setPrenom(dto.getPrenom());
         apprenant.setEmail(dto.getEmail());
         apprenant.setMotPasse(dto.getMotDePasse());
-        apprenant.setDateInscription(dto.getDateInscription().toLocalDate());
+        apprenant.setDateInscription(dto.getDateInscription() != null ? dto.getDateInscription().toLocalDate() : LocalDate.now());
         if(dto.getRendus() != null) {
             List<Rendu> rendus = dto.getRendus()
                     .stream()
@@ -37,7 +36,6 @@ public class ApprenantMapper {
         dto.setEmail(entity.getEmail());
         dto.setMotDePasse(entity.getMotPasse());
         dto.setDateInscription(entity.getDateInscription().atStartOfDay());
-
         if(entity.getRendus() != null) {
             List<RenduDto> rendusDto = entity.getRendus()
                     .stream()
@@ -45,8 +43,6 @@ public class ApprenantMapper {
                     .collect(Collectors.toList());
             dto.setRendus(rendusDto);
         }
-
         return dto;
     }
-
 }

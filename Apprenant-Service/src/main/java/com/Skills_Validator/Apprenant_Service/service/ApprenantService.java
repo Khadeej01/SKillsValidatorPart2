@@ -18,9 +18,14 @@ public class ApprenantService {
     private ApprenantRepository apprenantRepository;
 
     public ApprenantDTO inscrire(ApprenantDTO dto) {
-        Apprenant apprenant = ApprenantMapper.toEntity(dto);
-        apprenant = apprenantRepository.save(apprenant);
-        return ApprenantMapper.toDto(apprenant);
+        try {
+            Apprenant apprenant = ApprenantMapper.toEntity(dto);
+            apprenant = apprenantRepository.save(apprenant);
+            return ApprenantMapper.toDto(apprenant);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Erreur lors de l'inscription de l'apprenant: " + e.getMessage(), e);
+        }
     }
 
     public ApprenantDTO getApprenantById(Long id) {

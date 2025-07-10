@@ -2,9 +2,7 @@ package com.Skills_Validator.Apprenant_Service.mapper;
 import com.Skills_Validator.Apprenant_Service.dto.RenduDto;
 import com.Skills_Validator.Apprenant_Service.model.Rendu;
 
-
 public class RenduMapper {
-
     public static Rendu toEntity(RenduDto dto) {
         if (dto == null) return null;
         Rendu rendu = new Rendu();
@@ -15,7 +13,6 @@ public class RenduMapper {
         rendu.setLien(dto.getLien());
         return rendu;
     }
-
     public static RenduDto toDto(Rendu entity) {
         if (entity == null) return null;
         RenduDto dto = new RenduDto();
