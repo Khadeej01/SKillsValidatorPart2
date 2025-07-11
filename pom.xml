@@ -23,12 +23,12 @@
 
     <!-- This section lists all your microservice sub-projects -->
     <modules>
-        <module>Api-Gateway</module>
+
         <module>Apprenant-Service</module>
         <module>Brief-Service</module>
+        <module>Competence-Service</module>
         <module>Validation-Service</module>
 
-        <module>Competence-Service</module>
 
     </modules>
 
