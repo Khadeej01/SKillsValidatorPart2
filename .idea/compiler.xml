@@ -2,11 +2,11 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Apprenant-Service" />
         <module name="Api-Gateway" />
         <module name="Validation-Service" />
       </profile>
@@ -20,6 +20,15 @@
         </processorPath>
         <module name="Brief-Service" />
         <module name="skillsvalidator" />
+      </profile>
+      <profile name="Annotation profile for Apprenant-Service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="Apprenant-Service" />
       </profile>
     </annotationProcessing>
   </component>

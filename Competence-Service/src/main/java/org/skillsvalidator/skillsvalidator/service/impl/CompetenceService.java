@@ -74,4 +74,13 @@ public class CompetenceService {
             competenceRepository.deleteById(id);
         }
     }
+
+    public boolean validateCompetencesExist(List<Long> competenceIds) {
+        for (Long id : competenceIds) {
+            if (!competenceRepository.existsById(id)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
