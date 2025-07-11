@@ -59,7 +59,9 @@ public class ApprenantController {
         ApprenantDTO apprenantDTO = apprenantService.getApprenantById(id);
         if (apprenantDTO == null) return ResponseEntity.notFound().build();
         Rendu rendu = RenduMapper.toEntity(renduDto);
-        rendu.setApprenant(ApprenantMapper.toEntity(apprenantDTO));
+        Apprenant apprenant = new Apprenant();
+        apprenant.setId(id);
+        rendu.setApprenant(apprenant);
         rendu.setDatedepot(new java.util.Date());
         Rendu saved = renduRepository.save(rendu);
         return new ResponseEntity<>(RenduMapper.toDto(saved), HttpStatus.CREATED);
