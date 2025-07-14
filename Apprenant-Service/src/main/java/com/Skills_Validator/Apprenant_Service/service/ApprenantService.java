@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class ApprenantService {
 
     @Autowired
-    private ApprenantRepository apprenantRepository;
+    ApprenantRepository apprenantRepository;
 
     public ApprenantDTO inscrire(ApprenantDTO dto) {
         try {
