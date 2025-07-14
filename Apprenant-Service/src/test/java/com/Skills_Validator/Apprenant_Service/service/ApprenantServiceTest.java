@@ -53,6 +53,37 @@ class ApprenantServiceTest {
       // Assert
       assertNull(dto);
    }
+   @Test
+   void testUpdateApprenant_shouldUpdateAndReturnUpdatedDTO() {
+      // Créer et sauvegarder un apprenant de base
+      Apprenant apprenant = new Apprenant();
+      apprenant.setNom("OldName");
+      apprenant.setPrenom("OldPrenom");
+      apprenant.setEmail("old@example.com");
+      apprenant.setMotPasse("oldpass");
+      apprenant.setDateInscription(LocalDate.now()); // Important
+      Apprenant saved = apprenantRepository.save(apprenant);
+
+      // Créer le nouveau DTO avec les données à mettre à jour
+      ApprenantDTO updatedDTO = new ApprenantDTO();
+      updatedDTO.setNom("NewName");
+      updatedDTO.setPrenom("NewPrenom");
+      updatedDTO.setEmail("new@example.com");
+      updatedDTO.setMotDePasse("newpass");
+
+      // Appeler la méthode à tester
+      ApprenantDTO result = apprenantService.updateApprenant(saved.getId(), updatedDTO);
+
+      // Vérification
+      assertNotNull(result);
+      assertEquals("NewName", result.getNom());
+      assertEquals("new@example.com", result.getEmail());
+
+      // Confirmer en base
+      Apprenant updated = apprenantRepository.findById(saved.getId()).orElse(null);
+      assertNotNull(updated);
+      assertEquals("NewName", updated.getNom());
+   }
 
 
 }
