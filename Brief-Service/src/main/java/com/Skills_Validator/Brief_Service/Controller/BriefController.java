@@ -3,6 +3,7 @@ import com.Skills_Validator.Brief_Service.Entities.Brief;
 import com.Skills_Validator.Brief_Service.Services.BriefService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -18,6 +19,16 @@ public class BriefController {
     @PostMapping
     public Brief create(@RequestBody Brief brief){
         return briefService.create(brief);
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Brief> getById(@PathVariable Long id) {
+        return briefService.getById(id);
+    }
+
+    @GetMapping
+    public List<Brief> getAll(){
+        return briefService.getAll();
     }
 
     @PutMapping("/{id}/competences")

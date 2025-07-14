@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
-
+import java.util.Optional;
 
 
 @Service
@@ -19,8 +19,16 @@ public class BriefService {
         this.restTemplate = restTemplate;
     }
 
+    public Optional<Brief> getById(Long id) {
+        return briefRepositorie.findById(id);
+    }
+
     public Brief create(Brief brief){
         return briefRepositorie.save(brief);
+    }
+
+    public List<Brief> getAll(){
+        return briefRepositorie.findAll();
     }
 
     public Brief assignCompetences(Long briefId, List<Long> competenceIds) {
