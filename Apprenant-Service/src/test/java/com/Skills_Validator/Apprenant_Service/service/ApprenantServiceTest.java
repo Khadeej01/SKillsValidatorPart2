@@ -84,6 +84,24 @@ class ApprenantServiceTest {
       assertNotNull(updated);
       assertEquals("NewName", updated.getNom());
    }
+   @Test
+   void testDeleteApprenant_shouldRemoveFromDatabase() {
+      // Créer et sauvegarder un apprenant
+      Apprenant apprenant = new Apprenant();
+      apprenant.setNom("DeleteMe");
+      apprenant.setPrenom("Soon");
+      apprenant.setEmail("deleteme@test.com");
+      apprenant.setMotPasse("delete123");
+      apprenant.setDateInscription(LocalDate.now());
+      Apprenant saved = apprenantRepository.save(apprenant);
+
+      // Supprimer
+      apprenantService.deleteApprenant(saved.getId());
+
+      // Vérifier qu’il n’existe plus
+      boolean exists = apprenantRepository.existsById(saved.getId());
+      assertFalse(exists);
+   }
 
 
 }
