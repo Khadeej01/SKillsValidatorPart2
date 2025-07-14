@@ -1,8 +1,8 @@
 package com.Skills_Validator.Brief_Service.Entities;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Brief {
@@ -14,11 +14,17 @@ public class Brief {
     private String outils;
     private String livrable;
 
-    public Brief(Long id, String contexte, String outils, String livrable) {
+    @ElementCollection
+    private List<Long> competenceIds = new ArrayList<>();
+
+
+    public Brief(Long id, String contexte, String outils, String livrable , List<Long> competenceIds) {
         this.id = id;
         this.contexte = contexte;
         this.outils = outils;
         this.livrable = livrable;
+        this.competenceIds = competenceIds;
+
     }
 
     public Brief() {}
@@ -53,5 +59,13 @@ public class Brief {
 
     public void setLivrable(String livrable) {
         this.livrable = livrable;
+    }
+
+    public List<Long> getCompetenceIds() {
+        return competenceIds;
+    }
+
+    public void setCompetenceIds(List<Long> competenceIds) {
+        this.competenceIds = competenceIds;
     }
 }

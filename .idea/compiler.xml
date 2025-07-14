@@ -2,10 +2,15 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+
+        <module name="Api-Gateway" />
+        <module name="Validation-Service" />
+
       </profile>
       <profile name="Annotation profile for enaa-skills-parent" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -38,6 +43,15 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="Validation-Service" />
+      </profile>
+      <profile name="Annotation profile for Apprenant-Service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="Apprenant-Service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

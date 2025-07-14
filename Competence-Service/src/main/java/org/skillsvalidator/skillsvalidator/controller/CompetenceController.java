@@ -45,4 +45,9 @@ public class CompetenceController {
         competenceService.deleteCompetence(id);
         return ResponseEntity.ok().build();
     }
+    @PostMapping("/validate")
+    public ResponseEntity<Boolean> validateCompetences(@RequestBody List<Long> competenceIds) {
+        boolean allExist = competenceService.validateCompetencesExist(competenceIds);
+        return ResponseEntity.ok(allExist);
+    }
 }

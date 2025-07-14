@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  brief-service:
+    container_name: brief-service
+    build:
+      context: .                  # Assumes Dockerfile is here
+    ports:
+      - "8087:8080"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/briefdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: briefuser
+      SPRING_DATASOURCE_PASSWORD: briefpass
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    networks:
+      - brief-network
+
+  mysql:
+    image: mysql:8.0
+    container_name: brief-mysql
+    ports:
+      - "3307:3306"  # Port 3307 local -> 3306 dans le container
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: briefdb
+      MYSQL_USER: briefuser
+      MYSQL_PASSWORD: briefpass
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - brief-network
+
+
+networks:
+  brief-network:
+
+volumes:
+  mysql-data:
