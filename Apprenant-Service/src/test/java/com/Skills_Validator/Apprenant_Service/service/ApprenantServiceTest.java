@@ -6,6 +6,8 @@ import com.Skills_Validator.Apprenant_Service.model.Apprenant;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.time.LocalDate;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -42,6 +44,15 @@ class ApprenantServiceTest {
    }
 
 
+
+   @Test
+   void testGetApprenantById_shouldReturnNull_WhenNotFound() {
+      // Act
+      ApprenantDTO dto = apprenantService.getApprenantById(999L);
+
+      // Assert
+      assertNull(dto);
+   }
 
 
 }
