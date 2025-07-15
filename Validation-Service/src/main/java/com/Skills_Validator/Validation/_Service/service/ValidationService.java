@@ -39,7 +39,7 @@ public class ValidationService {
                     existing.setApprenantId(updatedValidation.getApprenantId());
                     existing.setBriefId(updatedValidation.getBriefId());
                     existing.setCompetenceId(updatedValidation.getCompetenceId());
-                    existing.setValidateurId(updatedValidation.getValidateurId());
+                    existing.setFormateurId(updatedValidation.getFormateurId());
                     existing.setDateValidation(updatedValidation.getDateValidation());
                     existing.setStatut(updatedValidation.getStatut());
                     return validationRepository.save(existing);
