@@ -14,7 +14,7 @@ public class Validation {
     private Long apprenantId;
     private Long briefId;
     private Long competenceId;
-    private Long validateurId;
+    private Long formateurId;
 
     private LocalDateTime dateValidation;
 
@@ -23,11 +23,11 @@ public class Validation {
 
     public Validation() {}
 
-    public Validation(Long apprenantId, Long briefId, Long competenceId, Long validateurId, LocalDateTime dateValidation, StatutValidation statut) {
+    public Validation(Long apprenantId, Long briefId, Long competenceId, Long formateurId, LocalDateTime dateValidation, StatutValidation statut) {
         this.apprenantId = apprenantId;
         this.briefId = briefId;
         this.competenceId = competenceId;
-        this.validateurId = validateurId;
+        this.formateurId = formateurId;
         this.dateValidation = dateValidation;
         this.statut = statut;
     }
@@ -64,12 +64,12 @@ public class Validation {
         this.competenceId = competenceId;
     }
 
-    public Long getValidateurId() {
-        return validateurId;
+    public Long getFormateurId() {
+        return formateurId;
     }
 
-    public void setValidateurId(Long validateurId) {
-        this.validateurId = validateurId;
+    public void setFormateurId(Long formateurId) {
+        this.formateurId = formateurId;
     }
 
     public LocalDateTime getDateValidation() {

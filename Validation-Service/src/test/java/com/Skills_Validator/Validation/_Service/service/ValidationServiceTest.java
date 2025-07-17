@@ -1,9 +1,6 @@
 package com.Skills_Validator.Validation._Service.service;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-
-
 import com.Skills_Validator.Validation._Service.model.StatutValidation;
 import com.Skills_Validator.Validation._Service.model.Validation;
 import com.Skills_Validator.Validation._Service.repository.ValidationRepository;

@@ -13,7 +13,7 @@ public class ValidationMapper {
         dto.setApprenantId(validation.getApprenantId());
         dto.setBriefId(validation.getBriefId());
         dto.setCompetenceId(validation.getCompetenceId());
-        dto.setValidateurId(validation.getValidateurId());
+        dto.setFormateurId(validation.getFormateurId());
         dto.setDateValidation(validation.getDateValidation());
         dto.setStatut(validation.getStatut() != null ? validation.getStatut().name() : null);
         return dto;
@@ -26,7 +26,7 @@ public class ValidationMapper {
         validation.setApprenantId(dto.getApprenantId());
         validation.setBriefId(dto.getBriefId());
         validation.setCompetenceId(dto.getCompetenceId());
-        validation.setValidateurId(dto.getValidateurId());
+        validation.setFormateurId(dto.getFormateurId());
         validation.setDateValidation(dto.getDateValidation());
         if (dto.getStatut() != null) {
             validation.setStatut(StatutValidation.valueOf(dto.getStatut()));
