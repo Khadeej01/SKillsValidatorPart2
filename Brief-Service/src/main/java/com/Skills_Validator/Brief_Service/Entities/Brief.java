@@ -55,3 +55,5 @@ public class Brief {
         this.livrable = livrable;
     }
 }
+BREIF AVEC LIVBRABLE
+
