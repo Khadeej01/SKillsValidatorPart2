@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+
+      <module fileurl="file://$PROJECT_DIR$/Api-Gateway/Api-Gateway.iml" filepath="$PROJECT_DIR$/Api-Gateway/Api-Gateway.iml" />
+
       <module fileurl="file://$PROJECT_DIR$/.idea/Skills-Validator.iml" filepath="$PROJECT_DIR$/.idea/Skills-Validator.iml" />
+
     </modules>
   </component>
 </project>
