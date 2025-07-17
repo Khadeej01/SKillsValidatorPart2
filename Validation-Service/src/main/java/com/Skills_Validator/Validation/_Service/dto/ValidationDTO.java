@@ -8,7 +8,7 @@ public class ValidationDTO {
     private Long apprenantId;
     private Long briefId;
     private Long competenceId;
-    private Long validateurId;
+    private Long formateurId;
     private LocalDateTime dateValidation;
     private String statut; // Use String for enum for easier serialization
 
@@ -46,12 +46,12 @@ public class ValidationDTO {
         this.competenceId = competenceId;
     }
 
-    public Long getValidateurId() {
-        return validateurId;
+    public Long getFormateurId() {
+        return formateurId;
     }
 
-    public void setValidateurId(Long validateurId) {
-        this.validateurId = validateurId;
+    public void setFormateurId(Long formateurId) {
+        this.formateurId = formateurId;
     }
 
     public LocalDateTime getDateValidation() {

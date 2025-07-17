@@ -69,3 +69,5 @@ public class Brief {
         this.competenceIds = competenceIds;
     }
 }
+BREIF AVEC LIVBRABLE
+
