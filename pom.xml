@@ -29,7 +29,7 @@
         <module>Competence-Service</module>
         <module>Validation-Service</module>
         <module>Auth-Service</module>
-
+        <module>api-Gateway</module>
 
     </modules>
 
