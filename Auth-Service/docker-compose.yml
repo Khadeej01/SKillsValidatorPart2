@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  auth-service:
+    build: ./Auth-Service
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:testdb
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: ""
+      SPRING_JPA_DATABASE-PLATFORM: org.hibernate.dialect.H2Dialect
+
+  apprenant-service:
+    build: ./Apprenant-Service
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:testdb
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: ""
+      SPRING_JPA_DATABASE-PLATFORM: org.hibernate.dialect.H2Dialect 

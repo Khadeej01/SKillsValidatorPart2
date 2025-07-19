@@ -7,7 +7,6 @@ import Skills_Validator.Auth_Service.model.User;
 import Skills_Validator.Auth_Service.repository.UserRepository;
 import Skills_Validator.Auth_Service.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -16,8 +15,6 @@ import java.util.Optional;
 public class AuthService {
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
     @Autowired
     private JwtUtil jwtUtil;
 
@@ -29,8 +26,8 @@ public class AuthService {
         User user = new User(
                 request.getUsername(),
                 request.getEmail(),
-                passwordEncoder.encode(request.getPassword()),
-                request.getRole() != null ? request.getRole() : "USER"
+                request.getPassword(), // store as plain text
+                request.getRole() != null ? request.getRole() : "APPRENANT"
         );
         userRepository.save(user);
         String token = jwtUtil.generateToken(user.getUsername(), user.getRole());
@@ -39,7 +36,7 @@ public class AuthService {
 
     public AuthResponse authenticate(AuthRequest request) {
         Optional<User> userOpt = userRepository.findByUsername(request.getUsername());
-        if (userOpt.isEmpty() || !passwordEncoder.matches(request.getPassword(), userOpt.get().getPassword())) {
+        if (userOpt.isEmpty() || !request.getPassword().equals(userOpt.get().getPassword())) {
             throw new RuntimeException("Invalid credentials");
         }
         User user = userOpt.get();
