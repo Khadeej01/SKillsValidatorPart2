@@ -7,12 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+
         <module name="eureka-client" />
         <module name="eureka-server" />
 
         <module name="Api-Gateway" />
         <module name="Validation-Service" />
-
       </profile>
       <profile name="Annotation profile for enaa-skills-parent" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -62,16 +62,35 @@
         </processorPath>
         <module name="Apprenant-Service" />
       </profile>
+
+      <profile name="Annotation profile for api-Gateway" enabled="true">
+
       <profile name="Annotation profile for enaa-skills-parent" enabled="true">
+
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
+
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="api-Gateway" />
+      </profile>
+      <profile name="Annotation profile for Auth-Service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="Auth-Service" />
+
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
         </processorPath>
         <module name="Brief-Service" />
         <module name="skillsvalidator" />
+
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -82,11 +101,16 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Api-Gateway" options="-parameters" />
       <module name="Apprenant-Service" options="-parameters" />
+      <module name="Auth-Service" options="-parameters" />
       <module name="Brief-Service" options="-parameters" />
       <module name="Competence-Service" options="-parameters" />
       <module name="Validation-Service" options="-parameters" />
+
+      <module name="api-Gateway" options="-parameters" />
+
       <module name="eureka-client" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+
       <module name="skillsvalidator" options="-parameters" />
     </option>
   </component>

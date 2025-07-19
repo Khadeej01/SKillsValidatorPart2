@@ -3,6 +3,7 @@ package Skills_Validator.Auth_Service.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
