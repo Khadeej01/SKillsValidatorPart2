@@ -87,4 +87,4 @@ public class Validation {
     public void setStatut(StatutValidation statut) {
         this.statut = statut;
     }
-}
+    }
