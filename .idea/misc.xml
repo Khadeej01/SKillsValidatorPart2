@@ -9,6 +9,8 @@
         <option value="$PROJECT_DIR$/Apprenant-Service/pom.xml" />
         <option value="$PROJECT_DIR$/Validation-Service/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-client/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
