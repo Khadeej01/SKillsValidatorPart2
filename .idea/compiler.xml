@@ -7,17 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Api-Gateway" />
-      </profile>
-      <profile name="Annotation profile for enaa-skills-parent" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-        </processorPath>
-        <module name="Apprenant-Service" />
-        <module name="Brief-Service" />
+        <module name="api-Gateway" />
       </profile>
       <profile name="Annotation profile for skillsvalidator" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -29,7 +19,22 @@
         </processorPath>
         <module name="skillsvalidator" />
       </profile>
+      <profile name="Annotation profile for enaa-skills-parent" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="Apprenant-Service" />
+        <module name="Brief-Service" />
+        <module name="Validation-Service" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Auth-Service" target="17" />
+      <module name="Competence-Service" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -37,6 +42,7 @@
       <module name="Apprenant-Service" options="-parameters" />
       <module name="Brief-Service" options="-parameters" />
       <module name="Validation-Service" options="-parameters" />
+      <module name="api-Gateway" options="-parameters" />
       <module name="skillsvalidator" options="-parameters" />
     </option>
   </component>

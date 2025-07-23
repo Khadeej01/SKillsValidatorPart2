@@ -27,7 +27,7 @@
         <module>Apprenant-Service</module>
         <module>Brief-Service</module>
         <module>Validation-Service</module>
-        <module>SKillsValidator-</module>
+        <module>Auth-Service</module>
 
     </modules>
 
