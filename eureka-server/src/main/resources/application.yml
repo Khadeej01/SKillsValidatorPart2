@@ -10,4 +10,4 @@ eureka:
     fetsh-registry: false
     register-with-eureka: false
     server:
-     witTimeInWhenSyncEmpty: 0
+    waitTimeInMsWhenSyncEmpty: 0
