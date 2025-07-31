@@ -48,9 +48,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="Apprenant-Service" />
+        <module name="api-Gateway" />
         <module name="Validation-Service" />
         <module name="Auth-Service" />
       </profile>
@@ -67,6 +68,7 @@
       <module name="Brief-Service" options="-parameters" />
       <module name="Competence-Service" options="-parameters" />
       <module name="Validation-Service" options="-parameters" />
+      <module name="api-Gateway" options="-parameters" />
       <module name="eureka-client" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="skillsvalidator" options="-parameters" />

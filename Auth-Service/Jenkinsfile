@@ -1,0 +1,31 @@
+ pipeline {
+     agent any
+
+     environment {
+         SONARQUBE_URL = 'http://sonarqube:9000'
+         SONARQUBE_TOKEN = credentials('sonar-token') // À configurer dans Jenkins
+     }
+
+     stages {
+         stage('Checkout') {
+             steps {
+                 checkout scm
+             }
+         }
+         stage('Build & Test') {
+             steps {
+                 sh './mvnw clean test'
+             }
+         }
+         stage('SonarQube Analysis') {
+             steps {
+                 sh "./mvnw sonar:sonar -Dsonar.projectKey=auth-service -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONARQUBE_TOKEN}"
+             }
+         }
+         stage('Build Docker Image') {
+             steps {
+                 sh 'docker build -t auth-service .'
+             }
+         }
+     }
+ }
